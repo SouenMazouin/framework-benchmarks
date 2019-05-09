@@ -23,7 +23,7 @@ docker run -p 6565:6565 -p 5000:80 -it --name netcore netcorebench
 
 * **[GHZ](https://ghz.sh/)**
 is a simple gRPC benchmarking and load testing tool inspired by
-[hey](https://ghz.sh/) and grpcurl [grpcurl](https://github.com/fullstorydev/grpcurl).
+[hey](https://ghz.sh/) and [grpcurl](https://github.com/fullstorydev/grpcurl).
  
 ### Basic Usages
 
