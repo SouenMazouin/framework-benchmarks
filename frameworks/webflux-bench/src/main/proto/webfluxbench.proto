@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "WebFluxbenchProto";
+option objc_class_prefix = "WFB";
+
+package webfluxbench;
+
+service WebfluxService {
+    rpc InMemory (google.protobuf.Empty) returns (google.protobuf.StringValue) {}
+    rpc SingleQuery (google.protobuf.Empty) returns (World) {}
+    rpc MultiQueries (Queries) returns (WorldList) {}
+    rpc ServerStream (Queries) returns (stream World) {}
+    rpc BidiStream (stream Queries) returns (stream World) {}
+    rpc ClientStream (stream Queries) returns (World) {}
+}
+
+message Queries {
+    uint32 number = 1;
+}
+
+message WorldList {
+    repeated World world = 1;
+}
+
+message World {
+    uint64 id = 1;
+    uint32 random_number = 2;
+}

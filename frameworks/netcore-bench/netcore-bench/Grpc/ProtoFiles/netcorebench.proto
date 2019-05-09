@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+option objc_class_prefix = "NCG";
+
+package netcorebench;
+
+service NetCoreBenchService {
+    rpc InMemory (google.protobuf.Empty) returns (google.protobuf.StringValue) {}
+    rpc SingleQuery (google.protobuf.Empty) returns (World) {}
+    rpc MultiQueries (Queries) returns (WorldList) {}
+    rpc ServerStream (Queries) returns (stream World) {}
+    rpc BidiStream (stream Queries) returns (stream World) {}
+}
+
+message Queries {
+    int32 number = 1;
+}
+
+message WorldList {
+    repeated World world = 1;
+}
+
+message World {
+    int64 id = 1;
+    int32 random_number = 2;
+}
+
