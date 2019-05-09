@@ -7,11 +7,11 @@ Netty is used for the async web server, with nearly everything configured with d
 A fixed thread pool of size equals to the number of database connections is used to run all the blocking code (jdbc database accesses) to not block netty's event loop.
 
 For postgresql access, there are four implementations.
-* [JdbcDbRepository](src/main/java/webfluxbench/JdbcDbRepository.java) is using JdbcTemplate.
-* [PgClientDbRepository](src/main/java/webfluxbench/PgClientDbRepository.java) is using reactive-pg-client
-* [RxJava2DbRepository](src/main/java/webfluxbench/RxJava2DbRepository.java) is using rxjava2-jdbc
-* [R2dbcDbRepository](src/main/java/webfluxbench/R2dbcDbRepository.java) is using r2dbc-postgresql
-For mongoDB access, spring-data-mongodb with reactive support is used. See [MongoDbRepository](src/main/java/webfluxbench/MongoDbRepository.java)
+* [JdbcDbRepository](src/main/java/webfluxbench/repository/JdbcDbRepository.java) is using JdbcTemplate.
+* [PgClientDbRepository](src/main/java/webfluxbench/repository/PgClientDbRepository.java) is using reactive-pg-client
+* [RxJava2DbRepository](src/main/java/webfluxbench/repository/RxJava2DbRepository.java) is using rxjava2-jdbc
+* [R2dbcDbRepository](src/main/java/webfluxbench/repository/R2dbcDbRepository.java) is using r2dbc-postgresql
+For mongoDB access, spring-data-mongodb with reactive support is used. See [MongoDbRepository](src/main/java/webfluxbench/repository/MongoDbRepository.java)
 
 ### Plaintext Test
 
@@ -19,7 +19,7 @@ For mongoDB access, spring-data-mongodb with reactive support is used. See [Mong
 
 ### JSON Serialization Test
 
-* [JSON test source](src/main/java/webfluxbench/web/WebfluxRouterr.java)
+* [JSON test source](src/main/java/webfluxbench/web/WebfluxRouter.java)
 
 ### Database Query Test
 
@@ -36,15 +36,6 @@ For mongoDB access, spring-data-mongodb with reactive support is used. See [Mong
 ### Template rendering Test
 
 * [Template rendering test source](src/main/java/webfluxbench/web/WebfluxRouter.java)
-
-## Versions
-
-* [Java OpenJDK 10](http://openjdk.java.net/)
-* [Spring boot 2.1.0.RELEASE](https://spring.io/projects/spring-boot)
-* [Spring data mongodb 2.1.0.RELEASE](https://projects.spring.io/spring-data-mongodb/)
-* [reactive-pg-client 0.10.6](https://github.com/reactiverse/reactive-pg-client)
-* [rxjava2-jdbc 0.2.0](https://github.com/davidmoten/rxjava2-jdbc)
-* [r2dbc-postgresql 1.0.0.BUILD-SNAPSHOT](https://github.com/r2dbc/r2dbc-postgresql)
 
 ## Test URLs
 
