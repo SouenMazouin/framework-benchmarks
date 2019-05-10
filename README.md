@@ -4,7 +4,7 @@ Benchmark of some Java and .NET frameworks
 
 
 ## Quick Start
-To get started developing you'll need to install [docker](https://docs.docker.com/install/) for .NET framework and [maven](https://maven.apache.org/) for Java frameworks.
+To get started developing you'll need to install [docker](https://docs.docker.com/install/) for the .NET framework and for mount the databases, Java frameworks work with maven [maven](https://maven.apache.org/).
 
 *Clone the repo:*
 ```
