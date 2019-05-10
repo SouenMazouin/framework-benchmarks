@@ -3,15 +3,22 @@
 Benchmark of some Java and .NET frameworks
 
 
-## Usage
+## Quick Start
+To get started developing you'll need to install [docker](https://docs.docker.com/install/) for .NET framework and [maven](https://maven.apache.org/) for Java frameworks.
 
-For *Spring-MVC* & *Spring Webflux* benchmarks with *Maven*:
+*Clone the repo:*
+```
+git clone https://github.com/SouenMazouin/framework-benchmarks.git
+```
+*Run:*
+
+* For Spring-MVC & Spring Webflux benchmarks with Maven:
 
 ```
 mvn clean package spring-boot:run
 ```
 
-For *ASP.Net Core* with *Docker* :
+* For ASP.Net Core with Docker :
 ```
 docker build -t netcorebench -f Dockerfile . 
 docker run -p 6565:6565 -p 5000:80 -it --name netcore netcorebench
