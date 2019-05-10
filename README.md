@@ -35,7 +35,7 @@ is a simple gRPC benchmarking and load testing tool inspired by
 ### Basic Usages
 
 ```bash
-wrk -t8 -c512 -d15s http://localhost/plaintext
+wrk -t8 -c512 -d15s http://localhost:8080/plaintext
 ```
 
 ```bash
