@@ -23,14 +23,6 @@ spring:
 
 ---
 spring:
-  profiles: rxjdbc
-
----
-spring:
-  profiles: r2dbc
-
----
-spring:
   profiles: mongo
 
 database:
