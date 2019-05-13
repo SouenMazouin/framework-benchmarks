@@ -6,19 +6,31 @@ Benchmark of some Java and .NET frameworks
 ## Quick Start
 To get started developing you'll need to install [docker](https://docs.docker.com/install/) for the .NET framework and for mount the databases, Java frameworks work with [maven](https://maven.apache.org/).
 
-*Clone the repo:*
+**Clone**
 ```
 git clone https://github.com/SouenMazouin/framework-benchmarks.git
 ```
-*Run:*
+**Build & Run Data Bases**
+* Mongo Db
+```
+docker build -t mongobench -f mongodb.dockerfile .
+docker run -p 27017:27017 -it --name mongobench mongobench
+```
+* PostgreSQL
+```
+docker build -t postgresbench -f postgres.dockerfile .
+docker run -p 5432:5432 -it --name postgresbench postgresbench
+```
 
-* For Spring-MVC & Spring Webflux benchmarks with Maven:
+**Run servers**
+
+* For Spring-MVC & Spring Webflux benchmarks with Maven
 
 ```
 mvn clean package spring-boot:run
 ```
 
-* For ASP.Net Core with Docker :
+* For ASP.Net Core with Docker
 ```
 docker build -t netcorebench -f Dockerfile . 
 docker run -p 6565:6565 -p 5000:80 -it --name netcore netcorebench
