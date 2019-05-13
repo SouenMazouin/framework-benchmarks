@@ -4,7 +4,7 @@ Benchmark of some Java and .NET frameworks
 
 
 ## Quick Start
-To get started developing you'll need to install [docker](https://docs.docker.com/install/) for .NET framework and [maven](https://maven.apache.org/) for Java frameworks.
+To get started developing you'll need to install [docker](https://docs.docker.com/install/) for the .NET framework and for mount the databases, Java frameworks work with [maven](https://maven.apache.org/).
 
 *Clone the repo:*
 ```
@@ -35,7 +35,7 @@ is a simple gRPC benchmarking and load testing tool inspired by
 ### Basic Usages
 
 ```bash
-wrk -t8 -c512 -d15s http://localhost/plaintext
+wrk -t8 -c512 -d15s http://localhost:8080/queries?queries=20
 ```
 
 ```bash
