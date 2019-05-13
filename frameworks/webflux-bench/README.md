@@ -9,8 +9,6 @@ A fixed thread pool of size equals to the number of database connections is used
 For postgresql access, there are four implementations.
 * [JdbcDbRepository](src/main/java/webfluxbench/repository/JdbcDbRepository.java) is using JdbcTemplate.
 * [PgClientDbRepository](src/main/java/webfluxbench/repository/PgClientDbRepository.java) is using reactive-pg-client
-* [RxJava2DbRepository](src/main/java/webfluxbench/repository/RxJava2DbRepository.java) is using rxjava2-jdbc
-* [R2dbcDbRepository](src/main/java/webfluxbench/repository/R2dbcDbRepository.java) is using r2dbc-postgresql
 For mongoDB access, spring-data-mongodb with reactive support is used. See [MongoDbRepository](src/main/java/webfluxbench/repository/MongoDbRepository.java)
 
 ### Plaintext Test
@@ -43,10 +41,6 @@ For mongoDB access, spring-data-mongodb with reactive support is used. See [Mong
 
     http://localhost:8080/plaintext
 
-### JSON Encoding Test
-
-    http://localhost:8080/json
-
 ### Database Query Test
 
     http://localhost:8080/db
@@ -54,10 +48,6 @@ For mongoDB access, spring-data-mongodb with reactive support is used. See [Mong
 ### Database Queries Test
 
     http://localhost:8080/queries?queries=5
-
-### Database Update Test
-
-    http://localhost:8080/updates?queries=5
 
 ### Template rendering Test
 
