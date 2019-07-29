@@ -2,6 +2,7 @@ package springbench.grpc;
 
 import com.google.protobuf.Empty;
 import com.google.protobuf.StringValue;
+import io.grpc.ServerBuilder;
 import springbench.repository.DbRepository;
 import io.grpc.stub.StreamObserver;
 import org.lognet.springboot.grpc.GRpcService;
@@ -24,6 +25,12 @@ public class GrpcImpl extends SpringServiceGrpc.SpringServiceImplBase {
     @Override
     public void inMemory(Empty request, StreamObserver<StringValue> responseObserver) {
         responseObserver.onNext(StringValue.newBuilder().setValue("Hello").build());
+        String name = Thread.currentThread().getName();
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         responseObserver.onCompleted();
     }
 
