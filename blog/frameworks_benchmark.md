@@ -5,19 +5,19 @@
 <p align= "center">
     <img src="./assets/frameworks_bench.png" alt="frameworks bench logos" width="650"/>
 <p/>
-Si ce genres de considérations ne se posaient peut-être pas il y a quelques dizaines d’années, nos applications web modernes doivent aujourd’hui, de part leur dynamisme et leur interactivité accru, gérer de très nombreux types d’évènements afin d’enrichir toujours plus l’expérience utilisateur.
+Si ce genre de considération ne se posait peut-être pas il y a quelques dizaines d’années, nos applications web modernes doivent aujourd’hui, de part leur dynamisme et leur intéractivité accru, gérer de très nombreux types d’évènements afin d’enrichir toujours plus l’expérience utilisateur.
 
 Pour répondre au mieux à ces besoins, il nous faut déterminer quels outils seront les plus adaptés à cette tâche. À CDiscount, nous avons donc décidé d’évaluer plusieurs solutions en réalisant une série de benchmarks pour support.
 
 ## Reactive Spring
 
-La première de ces solutions est une fonctionnalité majeur portée par Pivotal à leur framework Spring dans sa version 5 : [Spring-Webflux](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html).
+La première de ces solutions est une fonctionnalité majeure portée par Pivotal à leur framework Spring dans sa version 5 : [Spring-Webflux](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html).
 
 Un des éléments cruciaux apporté par Webflux est l’important changement de paradigme vis-à-vis de Spring-MVC au travers des [Reactive Streams](https://www.reactive-streams.org/).
 
 En effet, la [version initial de Spring](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc) est traditionnellement construite sur l’API Servlet, utilisant une architecture I/O à blocage synchrone avec un modèle à 1 req/thread,
 
-Webflux à opté, de son coté, pour une approche réactive, non-bloquante, asynchrone, capable de gérer le phénomène de [back-pressure](https://blog.octo.com/les-strategies-de-gestion-de-pression-partie-i/) ainsi qu’un nombre massif de connexions concurrentes.
+Webflux à opté, de son côté, pour une approche réactive, non-bloquante, asynchrone, capable de gérer le phénomène de [back-pressure](https://blog.octo.com/les-strategies-de-gestion-de-pression-partie-i/) ainsi qu’un nombre important de connexions concurrentes.
 
 ### Qu'est ce que la programmation réactive ?
 
@@ -50,13 +50,13 @@ De façon pragmatique, disons qu’en programmation réactive, tout est flux de 
 <p/>
 
 Il devient en effet concevable de créer des flux à partir de tout et n’importe quoi, absolument toute source de donnée est par essence un flux : les variables, les entrées utilisateurs, les collections, les propriétés, les caches, les structures de données, etc.
-En plus de ça il est également possible de combiner des flux, les calculer, les filtrer ou les réduire.
+En plus de ça il est également possible de combiner des flux, les transformer, les filtrer ou les agréger.
 
 ## Première série
 
 > **_A Savoir:_**
 >
-> - Concernant la conception du bench à proprement parler nous nous sommes grandement inspiré des travaux de [Techempower](http://www.techempower.com/)
+> - Concernant la conception du bench à proprement parler nous nous sommes grandement inspirés des travaux de [Techempower](http://www.techempower.com/)
 > - Nous avons égallement pris le soin d'intégrer dans notre benchmark le framework [ASP.Net Core](https://dotnet.microsoft.com/learn/web/what-is-aspnet-core) de Microsoft, bien connu pour ses excellentes performances, afin d'ajouter un peu de granularité à cette série.
 > - **Infra** :
 >   **x3 Machines** (Serveur, Client, BDD) ///
@@ -81,7 +81,7 @@ Chaque test est executé pendant 15 secondes avec un pool de 512 connexions.
 Comme on peut peu le constater .Net Core l'emporte largement pendant le test en mémoire mais Webflux prend clairement le dessus sur les tests Single & Multi-Queries...
 Sans trop de surprises, la version MVC de Spring fini à la traine assez loin derrière quand à elle.
 
-Seconde donnée intéressante, nous avons égallement consulté la consommation de Threads par le logiciel _(Seulement pour Spring)_ :
+Seconde donnée intéressante, nous avons également consulté la consommation de Threads par le logiciel _(Seulement pour Spring)_ :
 
 - Spring-MVC :
 
@@ -128,7 +128,7 @@ Comme expliqué ci-dessus, nous avons donc mis en place et implémenté gRPC et 
     <img src="./assets/historigramme_http2.png" alt="http/2 benchmark" width="800"/>
 <p/>
 
-Encore une fois les resultats sont au rendez vous et, ormis concernant le test InMemory sur le .Net , les performances des 3 frameworks sont boostés par ces outils.
+Encore une fois les résultats sont au rendez-vous et, hormis concernant le test InMemory sur le .Net , les performances des 3 frameworks sont boostés par ces outils.
 
 Vis à vis du nombre de threads utilisés en revanche, gRPC et protocol buffer n'ont simplement aucun impact dessus.
 
@@ -137,4 +137,4 @@ Vis à vis du nombre de threads utilisés en revanche, gRPC et protocol buffer n
 > Pour les curieux et ceux qui voudraient faire leurs propres tests, le projet est dispo avec un quick-start sur [**Github**](https://github.com/SouenMazouin/framework-benchmarks).
 
 « Le logiciel ralentit plus vite que le matériel n’accélère » disait Niklaus Wirth en 1995, le problème n'est pas nouveau, et les solutions existantes tels que le modèle réactif non plus, ce qui change, en revanche, c'est l'explosion du nombre d'applications candidates à ce type de modèle.
-Néanmoins, si ces systèmes réactifs permettent effectivement une interaction accrue et donc une grande satisfaction de l'utilisateur, il convient de notter qu'il est tout de même nécessaire d'appréhender un nouveau paradigme ainsi qu'un nouveau niveau d'abstraction avant que cela ne devienne naturel... Mais le jeu en vaut la chandelle !
+Néanmoins, si ces systèmes réactifs permettent effectivement une interaction accrue et donc une grande satisfaction de l'utilisateur, il convient de noter qu'il est tout de même nécessaire d'appréhender un nouveau paradigme ainsi qu'un nouveau niveau d'abstraction avant que cela ne devienne naturel... Mais le jeu en vaut la chandelle !
