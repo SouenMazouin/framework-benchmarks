@@ -63,7 +63,12 @@ wrk -t8 -c512 -d15s http://localhost:8080/queries?queries=20
 ```
 
 ```bash
-ghz -z 15s -cpus 8 -c 512 -proto {path/to/webfluxbench.proto} -insecure -call webfluxbench.WebfluxService.MultiQueries -d '{"number":20}' 0.0.0.0:6565
+./ghz --insecure \
+  -z 15s --cpus=8 -c 512 \
+  --proto path/to/your/webfluxbench.proto \
+  --call webfluxbench.WebfluxService.MultiQueries \
+  -d '{"number":20}' \
+  0.0.0.0:6565
 ```
 
 ## Resources
