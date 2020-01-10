@@ -25,7 +25,7 @@ public class GrpcImpl extends ReactorWebfluxServiceGrpc.WebfluxServiceImplBase{
     }
 
     @Override
-    public Mono<StringValue> inMemory(Mono<Empty> request) {
+    public Mono<StringValue> plainText(Mono<Empty> request) {
         return Mono.just(StringValue.newBuilder().setValue("Hello, World!").build());
     }
 

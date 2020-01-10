@@ -23,7 +23,7 @@ public class GrpcImpl extends SpringServiceGrpc.SpringServiceImplBase {
     }
 
     @Override
-    public void inMemory(Empty request, StreamObserver<StringValue> responseObserver) {
+    public void threadTest(Empty request, StreamObserver<StringValue> responseObserver) {
         responseObserver.onNext(StringValue.newBuilder().setValue("Hello").build());
         String name = Thread.currentThread().getName();
         try {
@@ -31,6 +31,12 @@ public class GrpcImpl extends SpringServiceGrpc.SpringServiceImplBase {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void plainText(Empty request, StreamObserver<StringValue> responseObserver) {
+        responseObserver.onNext(StringValue.newBuilder().setValue("Hello").build());
         responseObserver.onCompleted();
     }
 
