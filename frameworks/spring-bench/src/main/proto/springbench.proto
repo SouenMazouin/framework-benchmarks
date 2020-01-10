@@ -10,7 +10,8 @@ option objc_class_prefix = "SPB";
 package springbench;
 
 service SpringService {
-    rpc InMemory (google.protobuf.Empty) returns (google.protobuf.StringValue) {}
+    rpc ThreadTest (google.protobuf.Empty) returns (google.protobuf.StringValue) {}
+    rpc PlainText (google.protobuf.Empty) returns (google.protobuf.StringValue) {}
     rpc SingleQuery (google.protobuf.Empty) returns (World) {}
     rpc MultiQueries (Queries) returns (WorldList) {}
     rpc ServerStream (Queries) returns (stream World) {}
