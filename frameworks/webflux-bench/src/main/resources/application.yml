@@ -8,7 +8,7 @@ spring:
 
 database:
   name: hello_world
-  host: localhost
+  host: 0.0.0.0
   port: 5432
   username: benchmarkdbuser
   password: benchmarkdbpass
@@ -26,7 +26,7 @@ spring:
   profiles: mongo
 
 database:
-  url: mongodb://localhost:27017/?waitQueueMultiple=200
+  url: mongodb://0.0.0.0:27017/?waitQueueMultiple=200
   name: hello_world
 
 ---

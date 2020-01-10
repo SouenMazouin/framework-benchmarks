@@ -8,7 +8,7 @@ spring:
 
 database:
   name: hello_world
-  host: localhost
+  host: 0.0.0.0
   port: 5432
   username: benchmarkdbuser
   password: benchmarkdbpass
@@ -18,7 +18,7 @@ spring:
   profiles: mongo
 
 spring.data.mongodb:
-  uri: mongodb://localhost:27017/?waitQueueMultiple=200
+  uri: mongodb://0.0.0.0:27017/?waitQueueMultiple=200
   database: hello_world
 
 
@@ -27,7 +27,7 @@ spring:
   profiles:
     active: jdbc
 ---
-server:
-  tomcat:
-    max-threads: 1000
-  server-header: Spring
+#server:
+#  tomcat:
+#    max-threads: 1000
+#  server-header: Spring
